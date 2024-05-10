@@ -85,6 +85,5 @@ const createMarkUp = images
 
 galleryList.insertAdjacentHTML("beforeend", createMarkUp);
 
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on();
+new SimpleLightbox('.gallery a', { overlayOpacity: 0.8, captionsData: 'alt', captionDelay: 250 });
 
