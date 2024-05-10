@@ -19,7 +19,6 @@ form.addEventListener("submit", (event) => {
     if (email.value === "" || message.value === "") {
         alert("Fill please all fields");
     } else {
-        console.log(formData);
         localStorage.removeItem("feedback-form-state");
         form.reset();
     }
