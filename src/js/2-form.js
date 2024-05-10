@@ -1,6 +1,6 @@
-const formData = {
+let formData = {
     email: "",
-    message: "",
+    message: ""
 }
 
 const form = document.querySelector(".feedback-form");
@@ -19,6 +19,7 @@ form.addEventListener("submit", (event) => {
     if (email.value === "" || message.value === "") {
         alert("Fill please all fields");
     } else {
+        console.log(formData);
         localStorage.removeItem("feedback-form-state");
         form.reset();
     }
@@ -28,9 +29,9 @@ form.addEventListener("submit", (event) => {
 const fillInfo = () => {
     const savedInfo = localStorage.getItem("feedback-form-state");
     if (savedInfo !== null) {
-        const info = JSON.parse(savedInfo);
-        email.value = info.email;
-        message.value = info.message;
+        formData = JSON.parse(savedInfo);
+        email.value = formData.email;
+        message.value = formData.message;
     }
 };
 
